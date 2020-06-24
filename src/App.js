@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// TODO delete
+// import logo from './logo.svg';
 import './App.css';
 
 import {
@@ -9,7 +10,8 @@ import {
   Link
 } from "react-router-dom";
 
-import Home from './components/Home';
+// TODO commented this out because you define Home below
+// import Home from './components/Home';
 
 
 class App extends Component {
