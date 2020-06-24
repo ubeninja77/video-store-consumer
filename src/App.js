@@ -10,6 +10,8 @@ import {
   Link
 } from "react-router-dom";
 
+import Library from './components/Library';
+
 // TODO commented this out because you define Home below
 // import Home from './components/Home';
 
@@ -71,9 +73,11 @@ function Search() {
   return <h1>Customer List</h1>;
 }
 
-function Library() {
-  return <h1>Video Library</h1>;
-}
+// TODO delete
+
+// function Library() {
+//   return <h1>Video Library</h1>;
+// }
 
 function Customers() {
   return <h1>Search for a Video</h1>;
