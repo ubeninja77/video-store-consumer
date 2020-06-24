@@ -42,11 +42,24 @@ class Search extends Component {
 
   // TODO add movie to library
   
-  // TODO list movies
+  listMovies = () => {
+    return(
+      this.state.foundMovies.map((movie, i) => {
+        return (
+          <div className="movie" key={i}>
+              <h3>{movie.title}</h3>
+              <img src={movie.image_url} alt={movie.title} />
+              <p>{movie.overview}</p>
+            </div>
+        )
+      })
+    )
+  }
 
   render() {
     return (
       <section>
+        <h2>Find Movies to Add to Rental Library</h2>
         <SearchBox 
         submitSearchQueryCallback={this.searchMovies}
         />
