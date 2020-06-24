@@ -53,8 +53,8 @@ class Search extends Component {
       </section>
     )
   }
-
-
 };
+
+
 
 export default Search;
