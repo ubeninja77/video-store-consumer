@@ -32,13 +32,13 @@ class App extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/search">Customers</Link>
+              <Link to="/search">Add Movies</Link>
             </li>
             <li>
               <Link to="/library">Library</Link>
             </li>
             <li>
-              <Link to="/customers">Search Vidoes</Link>
+              <Link to="/customers">Customers</Link>
             </li>
           </ul>
         </nav>
