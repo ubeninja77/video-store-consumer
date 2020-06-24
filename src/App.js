@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
+import Library from './components/Library';
 // import Home from './components/Home';
 import Search from './components/Search';
 import Customers from './components/Customers';
-import Library from './components/Library';
 import axios from 'axios';
-
 
 class App extends Component {
   // render() {
@@ -111,6 +107,4 @@ class App extends Component {
     );
   }
 }
-
-
 export default App;
