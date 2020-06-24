@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Library from './components/Library';
+import Search from './components/Search';
 
 // TODO commented this out because you define Home below
 // import Home from './components/Home';
@@ -65,9 +66,9 @@ function Home() {
   return <h1>Homepage</h1>;
 }
 
-function Search() {
-  return <h1>Customer List</h1>;
-}
+// function Search() {
+//   return <h1>Customer List</h1>;
+// }
 
 // TODO delete
 
