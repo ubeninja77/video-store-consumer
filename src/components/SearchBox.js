@@ -58,5 +58,3 @@ export default class SearchBox extends Component {
     );
   }
 }
-
-// searchbar from https://callstack.github.io/react-native-paper/searchbar.html
