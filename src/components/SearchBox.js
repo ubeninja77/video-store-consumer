@@ -1,22 +1,60 @@
 import React, { Component } from 'react';
 
-import { Searchbar } from 'react-native-paper';
-
 export default class SearchBox extends Component {
-  state = {
-    searchQuery: '',
-  };
+  constructor(props) {
+    super(props);
 
-  _onChangeSearch = query => this.setState({ searchQuery: query });
+    this.state = {
+      searchQuery: '',      
+    }
+  }
+
+  resetState = () => {
+    this.setState({
+      searchQuery: '',
+    });
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+
+    const query = this.state.searchTerm
+
+    this.setState({
+      searchQuery: '',
+    })
+    this.props.submitSearchQueryCallback(query);
+    this.resetState();
+  }
+
+  onFormChange = (event) => {
+    const updatedState = {};
+
+    const field = event.target.name;
+    const value = event.target.value;
+
+    updatedState[field] = value;
+    this.setState(updatedState)
+  }
 
   render() {
-    const { searchQuery } = this.state;
     return (
-      <Searchbar
-        placeholder="Search"
-        onChangeText={this._onChangeSearch}
-        value={searchQuery}
-      />
+      <section>
+        <form onSubmit={this.onSubmit}>
+          <input 
+            placeholder='Search'
+            name='searchQuery'
+            onChange={this.onFormChange}
+            value={this.state.searchQuery}
+
+          />
+          <input
+            type='submit'
+            value='Search'
+            name='submit'
+          />
+        </form>
+      </section>
     );
   }
 }
