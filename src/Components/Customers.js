@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Customers.css';
 import PropTypes from "prop-types";
-import Button from "react-bootstrap/Button";
 
 const Customer = props => {
   const {
@@ -26,15 +25,16 @@ const Customer = props => {
       <td>${account_credit}</td>
       <td>{movies_checked_out}</td>
       <td>
-        <Button
-          variant="primary"
+        
+      <button variant="primary"
           type="button"
           onClick={() => {
             selectCustomerCallback(id);
           }}
-        >
-          Select
-        </Button>
+      >
+        Select
+      </button>
+
       </td>
     </tr>
   );
