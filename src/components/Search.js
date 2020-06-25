@@ -18,7 +18,6 @@ class Search extends Component {
   }
 
   searchMovies = (query) => {
-    console.log(query)
     if (query !== null) {
       axios.get('http://localhost:4000/movies/', {
         params: {
@@ -41,8 +40,6 @@ class Search extends Component {
     }
   }
 
-  // TODO add movie to library
-  
   listMovies = () => {
     return(
       this.state.foundMovies.map((movie, i) => {
@@ -55,6 +52,18 @@ class Search extends Component {
         )
       })
     )
+  }
+
+  addMove = (movie) => {
+    axios.post('http://localhost:4000/movies', movie)
+    .then(() => {
+    })
+    .catch((error) => {
+      this.setState({
+        error: error.message,
+        foundMovies: [],
+      })
+    })
   }
 
   render() {
