@@ -1,54 +1,89 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Customer from './Customer';
 
+const CustomerList = ({ customerList, selectCustomer }) => {
+  const allCustomers = () => {
+    const customerElements = customerList.map((customer) => {
+      return <Customer 
+        key={customer.id}
+        { ...customer }
+        selectCustomer={(id) => selectCustomer(id)}
+      />
+    });
 
-class Customer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      customers: [],
-      error: [],
-    }
+    return customerElements;
   }
 
-  componentDidMount() {
-    axios.get('http://localhost:4000/customers/')
-      .then((response) => {
-        this.setState({ customers: response.data });
-      })
-      .catch((error) => {
-        this.setState({ error: error.message });
-      });
-  }
-
-listCustomers = () => {
-  return(
-    this.state.customers.map((customer, i) => {
-      return (
-        <div key={i}>
-            <h3>{customer.name}</h3>
-            <p>{customer.phone}</p>
-          </div>
-      )
-    })
+  return (
+    <div>
+      <h3>Customer List</h3>
+      { allCustomers() }
+    </div>
   )
 }
 
-render() {
-  return(
-    <section>
-      {this.listCustomers()}
-    </section>
-  )
-}
+CustomerList.propTypes = {
+  customerList: PropTypes.array.isRequired,
+  selectCustomer: PropTypes.func.isRequired,
+};
+
+export default CustomerList;
 
 
-}
 
-export default Customer;
+// VERSION 2
+// import React, { Component } from 'react';
+// import axios from 'axios';
 
 
+// class Customer extends Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       customers: [],
+//       error: [],
+//     }
+//   }
+
+//   componentDidMount() {
+//     axios.get('http://localhost:4000/customers/')
+//       .then((response) => {
+//         this.setState({ customers: response.data });
+//       })
+//       .catch((error) => {
+//         this.setState({ error: error.message });
+//       });
+//   }
+
+// listCustomers = () => {
+//   return(
+//     this.state.customers.map((customer, i) => {
+//       return (
+//         <div key={i}>
+//             <h3>{customer.name}</h3>
+//             <p>{customer.phone}</p>
+//           </div>
+//       )
+//     })
+//   )
+// }
+
+// render() {
+//   return(
+//     <section>
+//       {this.listCustomers()}
+//     </section>
+//   )
+// }
+
+
+// }
+
+// export default Customer;
+
+// VERSION 1
 // import React, { Component } from 'react';
 // import axios from 'axios';
 // import './Customers.css';
