@@ -1,28 +1,60 @@
-.App {
+.Navbar{
+  margin-bottom: 10rem;
+}
+
+body, .background{
+  background: url(https://pixabay.com/users/Alexas_Fotos-686414/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1672887);
+  /* url();  */
+
+  height: 500px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contents{
+  margin-top: 3rem;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.navbar a{
+  color: rgb(204, 162, 238)
+}
+.navbar a:hover {
+  color: rgb(204, 162, 238)
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.navbar a:link{
+  text-decoration: none;
+}
+
+.success{
   color: white;
+  background-color: rgb(245, 28, 28);
+  font-size: 1.5rem;
+  text-align: center
 }
 
-.App-title {
-  font-size: 1.5em;
+.error{
+  color: white;
+  background-color:  rgb(245, 28, 28);
+  font-size: 1.5rem;
+  text-align: center
 }
 
-.App-intro {
-  font-size: large;
+.jumbotron p, .jumbotron h1{
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+*{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.checkout-button{
+margin-top: 3rem;
+margin-left: 2rem;
 }
