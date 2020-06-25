@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Library from './components/Library';
 import Search from './components/Search';
+import Customer from './components/Customer';
 import Customers from './components/Customers';
 import axios from 'axios';
 
@@ -74,6 +75,9 @@ class App extends Component {
             <li>
               <Link to="/customers">Customers</Link>
             </li>
+            <li>
+              <Link to="/customer">Customers</Link>
+            </li>
           </ul>
         </nav>
         <main>
@@ -83,6 +87,9 @@ class App extends Component {
           <Switch>
             <Route path="/customers">
               <Customers onSelectedCustomerCallback={this.setCustomerState} />
+            </Route>
+            <Route path="/customer">
+              <Customer />
             </Route>
             <Route path="/library">
               <Library onSelectedMovieCallback={this.setMovieState} />
