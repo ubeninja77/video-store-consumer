@@ -9,7 +9,6 @@ import {
 import Library from './components/Library';
 import Search from './components/Search';
 import Customer from './components/Customer';
-import Customers from './components/Customers';
 import axios from 'axios';
 
 class App extends Component {
@@ -83,9 +82,6 @@ class App extends Component {
           </h1>
           <Switch>
             <Route path="/customer">
-              <Customers onSelectedCustomerCallback={this.setCustomerState} />
-            </Route>
-            <Route path="/customer">
               <Customer />
             </Route>
             <Route path="/library">
@@ -115,19 +111,6 @@ function Home() {
   return <h1>Homepage</h1>;
 }
 
-// function Search() {
-//   return <h1>Customer List</h1>;
-// }
-
-// TODO delete
-
-// function Library() {
-//   return <h1>Video Library</h1>;
-// }
-
-// function Customers() {
-//   return <h1>Search for a Video</h1>;
-// }
 
 
 export default App;
