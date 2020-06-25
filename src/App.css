@@ -1,66 +1,60 @@
-.info-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 100%;
-  height: 50px;
-  list-style: none;
-  background-color: papayawhip;
-  padding: 1em;
-  display: flex;
-  flex-wrap: wrap;
+.Navbar{
+  margin-bottom: 10rem;
 }
 
-.info-bar li {
-  padding: 1em 2em 0 2em;
+body, .background{
+  background: url(https://pixabay.com/users/Alexas_Fotos-686414/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1672887);
+  /* url();  */
+
+  height: 500px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-nav {
-  margin-top: 110px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  font-size: 2em;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: rgb(61, 66, 71);
-}
-
-* {
+.contents{
+  margin-top: 3rem;
   text-align: center;
 }
 
-h1 {
-  color: gold;
+.navbar a{
+  color: rgb(204, 162, 238)
+}
+.navbar a:hover {
+  color: rgb(204, 162, 238)
 }
 
-
-.selected-border {
-  border: 10px solid gold;
+.navbar a:link{
+  text-decoration: none;
 }
 
-.movie-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.success{
+  color: white;
+  background-color: rgb(245, 28, 28);
+  font-size: 1.5rem;
+  text-align: center
 }
 
-.movie {
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  width: 200px;
+.error{
+  color: white;
+  background-color:  rgb(245, 28, 28);
+  font-size: 1.5rem;
+  text-align: center
 }
 
-.info-bar {
-  margin: 0;
-  background-color: black;
-  color: gold;
+.jumbotron p, .jumbotron h1{
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+*{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.checkout-button{
+margin-top: 3rem;
+margin-left: 2rem;
 }
