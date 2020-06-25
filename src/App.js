@@ -73,9 +73,6 @@ class App extends Component {
               <Link to="/library">Library</Link>
             </li>
             <li>
-              <Link to="/customers">Customers</Link>
-            </li>
-            <li>
               <Link to="/customer">Customers</Link>
             </li>
           </ul>
@@ -85,11 +82,8 @@ class App extends Component {
             Bootleg
           </h1>
           <Switch>
-            <Route path="/customers">
-              <Customers onSelectedCustomerCallback={this.setCustomerState} />
-            </Route>
             <Route path="/customer">
-              <Customer />
+              <Customers onSelectedCustomerCallback={this.setCustomerState} />
             </Route>
             <Route path="/library">
               <Library onSelectedMovieCallback={this.setMovieState} />
