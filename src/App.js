@@ -67,13 +67,13 @@ class App extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/search">Customers</Link>
+              <Link to="/search">Search Vidoes</Link>
             </li>
             <li>
               <Link to="/library">Library</Link>
             </li>
             <li>
-              <Link to="/customers">Search Vidoes</Link>
+              <Link to="/customer">Customers</Link>
             </li>
           </ul>
         </nav>
@@ -82,7 +82,7 @@ class App extends Component {
             Bootleg
           </h1>
           <Switch>
-            <Route path="/customers">
+            <Route path="/customer">
               <Customers onSelectedCustomerCallback={this.setCustomerState} />
             </Route>
             <Route path="/library">
