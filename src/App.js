@@ -7,8 +7,8 @@ import {
   Link
 } from "react-router-dom";
 import Library from './components/Library';
-// import Home from './components/Home';
 import Search from './components/Search';
+import Customer from './components/Customer';
 import Customers from './components/Customers';
 import axios from 'axios';
 
@@ -67,7 +67,7 @@ class App extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/search">Search Vidoes</Link>
+              <Link to="/search">Add Movies</Link>
             </li>
             <li>
               <Link to="/library">Library</Link>
@@ -84,6 +84,9 @@ class App extends Component {
           <Switch>
             <Route path="/customer">
               <Customers onSelectedCustomerCallback={this.setCustomerState} />
+            </Route>
+            <Route path="/customer">
+              <Customer />
             </Route>
             <Route path="/library">
               <Library onSelectedMovieCallback={this.setMovieState} />
@@ -107,4 +110,24 @@ class App extends Component {
     );
   }
 }
+
+function Home() {
+  return <h1>Homepage</h1>;
+}
+
+// function Search() {
+//   return <h1>Customer List</h1>;
+// }
+
+// TODO delete
+
+// function Library() {
+//   return <h1>Video Library</h1>;
+// }
+
+// function Customers() {
+//   return <h1>Search for a Video</h1>;
+// }
+
+
 export default App;
