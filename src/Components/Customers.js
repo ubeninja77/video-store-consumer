@@ -1,77 +1,53 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Customers.css';
+import PropTypes from "prop-types";
+import Button from "react-bootstrap/Button";
 
-class Customers extends Component {
-  constructor(props) {
-    super(props);
+const Customer = props => {
+  const {
+    id,
+    name,
+    city,
+    state,
+    phone,
+    account_credit,
+    movies_checked_out,
+    selectCustomerCallback
+  } = props;
 
-    this.state = {
-      selectedCustomer: {},
-      allCustomers: [],
-      error: '',
-    }
-  }
+  return (
+    <tr>
+      <td>{id}</td>
+      <td>{name}</td>
+      <td>{city}</td>
+      <td>{state}</td>
+      <td>{phone}</td>
+      <td>${account_credit}</td>
+      <td>{movies_checked_out}</td>
+      <td>
+        <Button
+          variant="primary"
+          type="button"
+          onClick={() => {
+            selectCustomerCallback(id);
+          }}
+        >
+          Select
+        </Button>
+      </td>
+    </tr>
+  );
+};
 
-  componentDidMount = () => {
-    axios.get('http://localhost:3000/customers')
-    .then((response) => {
-      this.setState({
-        allCustomers: response.data
-      });
-    })
-    .catch((error) => {
-      this.setState({
-        error: error.errors
-      });
-    })
-  }
-
-  selectCustomer = (customer) => {
-    this.setState({
-      selectedCustomer: customer,
-    });
-    this.props.onSelectedCustomerCallback(customer);
-  }
-
-
-
-  showAllCustomers = () => {
-    return(
-      this.state.allCustomers.map((customer,i) => {
-        return (
-          <tr key={i}>
-            <td>{customer.id}</td>
-            <td>{customer.name}</td>
-            <td><button
-              type="button"
-              onClick={() => { this.selectCustomer(customer) }}
-            >Select</button></td>
-          </tr>
-        )
-      })
-    )
-  };
-
-  render(){
-    return(
-      <section>
-        <h2>List of Customers</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.showAllCustomers()}
-          </tbody>
-        </table>
-      </section>
-    );
-  }
+Customer.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  phone: PropTypes.string,
+  account_credit: PropTypes.number,
+  movies_checked_out: PropTypes.number.isRequired,
 }
 
-export default Customers;
+export default Customer;
