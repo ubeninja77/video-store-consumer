@@ -15,18 +15,6 @@ export default class SearchBox extends Component {
     });
   }
 
-  onSubmit = (event) => {
-    event.preventDefault();
-
-    const query = this.state.searchTerm
-
-    this.setState({
-      searchQuery: '',
-    })
-    this.props.submitSearchQueryCallback(query);
-    this.resetState();
-  }
-
   onFormChange = (event) => {
     const updatedState = {};
 
@@ -36,6 +24,20 @@ export default class SearchBox extends Component {
     updatedState[field] = value;
     this.setState(updatedState)
   }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+
+    const query = this.state.searchQuery
+    console.log(query)
+    this.setState({
+      searchQuery: '',
+    })
+    this.props.submitSearchQueryCallback(query);
+    this.resetState();
+  }
+
+  
 
   render() {
     return (

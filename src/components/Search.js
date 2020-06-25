@@ -18,7 +18,8 @@ class Search extends Component {
   }
 
   searchMovies = (query) => {
-    if (query!== null) {
+    console.log(query)
+    if (query !== null) {
       axios.get('http://localhost:4000/movies/', {
         params: {
           query: query,
@@ -63,6 +64,9 @@ class Search extends Component {
         <SearchBox 
         submitSearchQueryCallback={this.searchMovies}
         />
+        <div>
+          {this.listMovies()}
+        </div>
       </section>
     )
   }
