@@ -40,15 +40,21 @@ class Search extends Component {
     }
   }
 
-  addMove = (movie) => {
+  addMovie = (movie) => {
     axios.post('http://localhost:4000/movies', movie)
     .then(() => {
+      return (
+      <p>Added movie to the rental library.</p>
+      )
     })
     .catch((error) => {
       this.setState({
         error: error.message,
         foundMovies: [],
       })
+      return (
+        <p>There was an error.</p>
+      )
     })
   }
 
@@ -60,6 +66,9 @@ class Search extends Component {
               <h3>{movie.title}</h3>
               <img src={movie.image_url} alt={movie.title} />
               <p>{movie.overview}</p>
+              <button onClick={() => this.addMovie(movie)}>
+                Add to Rentals
+              </button>
             </div>
         )
       })
