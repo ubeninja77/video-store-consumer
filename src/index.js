@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(<App baseUrl="http://localhost:3000/" />, document.getElementById('root'));
 registerServiceWorker();
