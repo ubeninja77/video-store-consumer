@@ -78,7 +78,7 @@ class App extends Component {
         </nav>
         <main>
           <h1>
-            Bootleg
+            Bootleg Videos
           </h1>
           <Switch>
             <Route path="/customer">
@@ -110,7 +110,6 @@ class App extends Component {
 function Home() {
   return <h1>Homepage</h1>;
 }
-
 
 
 export default App;
