@@ -95,7 +95,7 @@ class App extends Component {
             </Route>
           </Switch>
         </main>
-        <div className="info-bar-container">
+        <div className="info-bar">
             <ul className="info-bar">
               <li>{Object.values(this.state.selectedMovie).length !== 0 ? 'Selected Movie:' : null} {this.state.selectedMovie ? this.state.selectedMovie.title : null}</li>
               <li>{Object.values(this.state.selectedCustomer).length !== 0 ? 'Selected Customer:' : null} {this.state.selectedCustomer ? this.state.selectedCustomer.name : null}</li>
