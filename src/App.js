@@ -99,7 +99,7 @@ class App extends Component {
             <ul className="info-bar">
               {Object.values(this.state.selectedMovie).length !== 0 ? 'Selected Movie:' : null} {this.state.selectedMovie ? this.state.selectedMovie.title : null}
               {Object.values(this.state.selectedCustomer).length !== 0 ? ' | Selected Customer:' : null} {this.state.selectedCustomer ? this.state.selectedCustomer.name : null}
-               {Object.values(this.state.selectedMovie).length !== 0 && Object.values(this.state.selectedCustomer).length !== 0 ? <button onClick={this.addRental}>Checkout</button> : null}
+              {Object.values(this.state.selectedMovie).length !== 0 && Object.values(this.state.selectedCustomer).length !== 0 ? <button onClick={this.addRental}>Checkout</button> : null}
             </ul>
         </div>
       </Router>
