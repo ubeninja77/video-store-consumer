@@ -82,7 +82,7 @@ class App extends Component {
           </h1>
           <Switch>
             <Route path="/customer">
-              <Customers onSelectedCustomerCallback={this.setCustomerState} />
+              <Customer onSelectedCustomerCallback={this.setCustomerState} />
             </Route>
             <Route path="/library">
               <Library onSelectedMovieCallback={this.setMovieState} />
