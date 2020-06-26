@@ -23,18 +23,25 @@ class Library extends Component {
       });
   }
 
-listMovies = () => {
-  return(
-    this.state.movies.map((movie, i) => {
-      return (
-        <div className="movie" key={i}>
-            <h3>{movie.title}</h3>
-            <img src={movie.image_url} alt={movie.title} />
-            <p>{movie.overview}</p>
-          </div>
-      )
-    })
-  )
+  selectMovie = (movie) => {
+    this.setState({
+      selectedMovie: movie,
+    });
+    this.props.onSelectedMovieCallback(movie);
+  }
+
+  listMovies = () => {
+    return(
+      this.state.movies.map((movie, i) => {
+        return (
+          <div className="movie" key={i}>
+              <h3>{movie.title}</h3>
+              <img src={movie.image_url} alt={movie.title} />
+              <p>{movie.overview}</p>
+            </div>
+        )
+      })
+    )
 }
 
 render() {
