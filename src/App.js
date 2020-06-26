@@ -97,9 +97,9 @@ class App extends Component {
         </main>
         <div className="info-bar">
             <ul className="info-bar">
-              <li>{Object.values(this.state.selectedMovie).length !== 0 ? 'Selected Movie:' : null} {this.state.selectedMovie ? this.state.selectedMovie.title : null}</li>
-              <li>{Object.values(this.state.selectedCustomer).length !== 0 ? 'Selected Customer:' : null} {this.state.selectedCustomer ? this.state.selectedCustomer.name : null}</li>
-              <li>{Object.values(this.state.selectedMovie).length !== 0 && Object.values(this.state.selectedCustomer).length !== 0 ? <button onClick={this.addRental}>Checkout</button> : null}</li>
+              {Object.values(this.state.selectedMovie).length !== 0 ? 'Selected Movie:' : null} {this.state.selectedMovie ? this.state.selectedMovie.title : null}
+              {Object.values(this.state.selectedCustomer).length !== 0 ? ' | Selected Customer:' : null} {this.state.selectedCustomer ? this.state.selectedCustomer.name : null}
+               {Object.values(this.state.selectedMovie).length !== 0 && Object.values(this.state.selectedCustomer).length !== 0 ? <button onClick={this.addRental}>Checkout</button> : null}
             </ul>
         </div>
       </Router>
