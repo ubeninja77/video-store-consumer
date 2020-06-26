@@ -38,6 +38,12 @@ class Library extends Component {
               <h3>{movie.title}</h3>
               <img src={movie.image_url} alt={movie.title} />
               <p>{movie.overview}</p>
+              <span>
+              <button
+              type="button"
+              onClick={() => { this.selectMovie(movie) }}
+            >Select</button>
+              </span>
             </div>
         )
       })
