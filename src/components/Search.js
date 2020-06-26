@@ -17,6 +17,12 @@ class Search extends Component {
     });
   }
 
+  selectMovie = (movie) => {
+    this.setState({
+      selectedMovie: movie,
+    });
+  }
+
   searchMovies = (query) => {
     if (query !== null) {
       axios.get('http://localhost:4000/movies/', {
@@ -75,8 +81,6 @@ class Search extends Component {
     )
   }
 
-  
-
   render() {
     return (
       <section>
@@ -91,7 +95,6 @@ class Search extends Component {
     )
   }
 };
-
 
 
 export default Search;
