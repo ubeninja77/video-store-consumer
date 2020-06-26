@@ -21,23 +21,37 @@ class Customer extends Component {
         this.setState({ error: error.message });
       });
   }
+  
+  selectCustomer = (customer) => {
+    this.setState({
+      selectedCustomer: customer,
+    });
+    this.props.onSelectedCustomerCallback(customer);
+  }
+
 
 listCustomers = () => {
   return(
     this.state.customers.map((customer, i) => {
       return (
-        <div key={i}>
-            <h3>{customer.name}</h3>
-            <p>{customer.phone}</p>
-          </div>
+        <tr key={i}>
+            <td> {customer.name} </td>
+            <td> {customer.id} </td>
+            <td> {customer.phone}</td>
+            <td><button
+              type="button"
+              onClick={() => { this.selectCustomer(customer) }}
+            >Select</button></td>
+        </tr>
       )
     })
   )
-}
+};
 
 render() {
   return(
     <section>
+      <h2>List of All Customers</h2>
       {this.listCustomers()}
     </section>
   )
